@@ -42,4 +42,25 @@ function copyDiscord() {
     });
 }
 
+// --- SECRET NUKE LOGIC ---
+let nukeBuffer = "";
+document.addEventListener("keydown", (e) => {
+    nukeBuffer += e.key.toLowerCase();
+    if (nukeBuffer.includes("nuke")) {
+        triggerNuke();
+        nukeBuffer = "";
+    }
+    if (nukeBuffer.length > 10) nukeBuffer = nukeBuffer.substring(1);
+});
+
+function triggerNuke() {
+    document.body.classList.add("nuke-active");
+    const msg = document.createElement("div");
+    msg.className = "terminal-destroyed";
+    msg.innerHTML = "SYSTEM COMPROMISED<br><span style='font-size:1.2rem'>REBOOTING IN 3...</span>";
+    document.body.appendChild(msg);
+
+    setTimeout(() => { location.reload(); }, 3500);
+}
+
 document.addEventListener("DOMContentLoaded", type);

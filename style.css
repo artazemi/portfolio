@@ -20,6 +20,7 @@ body {
     color: var(--text-bright);
     overflow-x: hidden;
     position: relative;
+    transition: background 0.5s;
 }
 
 body::before {
@@ -87,7 +88,7 @@ h1 { font-size: 2.3rem; margin-bottom: 8px; white-space: nowrap; }
     padding: 4px 12px; border-radius: 4px; font-size: 0.8rem; display: inline-block; margin-right: 5px;
 }
 
-/* --- SYMMETRICAL GRID SYSTEM --- */
+/* --- GRID SYSTEM --- */
 .grid { 
     display: grid; 
     grid-template-columns: 1fr 1fr; 
@@ -113,7 +114,7 @@ h1 { font-size: 2.3rem; margin-bottom: 8px; white-space: nowrap; }
 }
 
 .card-content {
-    flex-grow: 1; /* Pushes footer to the bottom */
+    flex-grow: 1;
 }
 
 .card-content p { font-size: 0.85rem; color: var(--text-dim); line-height: 1.5; margin-bottom: 20px; }
@@ -140,7 +141,7 @@ h1 { font-size: 2.3rem; margin-bottom: 8px; white-space: nowrap; }
     100% { transform: scale(1); opacity: 1; }
 }
 
-/* --- NORMALIZED BUTTONS --- */
+/* --- SYMMETRICAL BUTTONS --- */
 .view-btn {
     display: block;
     text-align: center;
@@ -155,7 +156,7 @@ h1 { font-size: 2.3rem; margin-bottom: 8px; white-space: nowrap; }
     transition: 0.3s;
     border-radius: 5px;
     cursor: pointer;
-    box-sizing: border-box; /* Ensures padding doesn't affect width */
+    box-sizing: border-box;
 }
 
 .view-btn:hover:not(.btn-disabled) {
@@ -172,7 +173,7 @@ h1 { font-size: 2.3rem; margin-bottom: 8px; white-space: nowrap; }
     pointer-events: none;
 }
 
-.tags { display: flex; gap: 10px; opacity: 0.8; margin-bottom: 5px; }
+.tags { display: flex; gap: 10px; opacity: 0.8; margin-bottom: 10px; }
 .tags span { font-size: 0.75rem; color: var(--primary); }
 
 /* --- CONTACT & FOOTER --- */
@@ -185,6 +186,33 @@ h1 { font-size: 2.3rem; margin-bottom: 8px; white-space: nowrap; }
 
 footer { margin-top: 50px; text-align: center; color: #546e7a; font-size: 0.8rem; }
 .footer-glow { color: var(--primary); text-shadow: 0 0 8px var(--primary-glow); animation: pulseGlow 2s infinite ease-in-out; }
+
+/* --- NUKE ANIMATION --- */
+.nuke-active {
+    animation: screenShake 0.15s infinite;
+    background: #400 !important;
+    filter: invert(1) hue-rotate(90deg);
+    pointer-events: none;
+}
+
+@keyframes screenShake {
+    0% { transform: translate(2px, 1px); }
+    50% { transform: translate(-3px, -2px); }
+    100% { transform: translate(1px, 2px); }
+}
+
+.terminal-destroyed {
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ff0000;
+    font-size: 3.5rem;
+    font-weight: bold;
+    z-index: 10000;
+    text-shadow: 0 0 20px red;
+    text-align: center;
+    font-family: 'Fira Code', monospace;
+}
 
 @keyframes pulseGlow { 
     0%, 100% { text-shadow: 0 0 5px var(--primary-glow); opacity: 0.8; }
