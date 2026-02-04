@@ -63,10 +63,9 @@ body::before {
     margin-bottom: 40px;
 }
 
-/* --- HERO (Layout Fix) --- */
 .hero { 
     margin-bottom: 30px; 
-    min-height: 150px; /* Prevents bio from moving when text changes */
+    min-height: 150px; 
 }
 h1 { 
     font-size: 2.3rem; 
@@ -83,8 +82,12 @@ h1 {
 .subtitle { color: var(--primary); font-weight: 600; font-size: 1rem; }
 .bio { color: var(--text-dim); margin-top: 15px; line-height: 1.6; max-width: 600px; font-size: 0.95rem; }
 
-/* --- SECTIONS --- */
 .section-title { margin: 40px 0 20px; font-size: 0.9rem; color: var(--primary); }
+
+.custom-pad {
+    padding-bottom: 10px;
+    display: block;
+}
 
 .skills-box {
     background: rgba(255, 255, 255, 0.02);
@@ -99,7 +102,6 @@ h1 {
     padding: 4px 12px; border-radius: 4px; font-size: 0.8rem; display: inline-block; margin-right: 5px;
 }
 
-/* --- REPOSITORIES (Source Button Fix) --- */
 .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 
 .card {
@@ -118,9 +120,13 @@ h1 {
     margin-bottom: 15px;
 }
 
-.project-link {
-    font-size: 0.7rem; color: var(--primary); text-decoration: none;
-    border: 1px solid var(--primary); padding: 2px 8px; border-radius: 4px;
+.coming-soon {
+    font-size: 0.65rem;
+    color: #ffb74d;
+    border: 1px solid #ffb74d;
+    padding: 2px 8px;
+    border-radius: 4px;
+    letter-spacing: 1px;
 }
 
 .card-content p { font-size: 0.85rem; color: var(--text-dim); line-height: 1.5; margin-bottom: 15px; }
@@ -128,15 +134,27 @@ h1 {
 .tags { margin-top: auto; display: flex; gap: 10px; opacity: 0.8; }
 .tags span { font-size: 0.75rem; color: var(--primary); }
 
-/* --- CONTACT & FOOTER --- */
 .social-links { display: flex; gap: 12px; margin-top: 10px; }
 .btn {
     text-decoration: none; color: #fff; border: 1px solid var(--primary);
     padding: 8px 18px; border-radius: 8px; font-size: 0.85rem; transition: 0.3s;
+    cursor: pointer;
 }
 .btn:hover { background: var(--primary); color: #000; }
 
 footer { margin-top: 50px; text-align: center; color: #546e7a; font-size: 0.8rem; }
+
+/* --- GLOWY FOOTER TEXT --- */
+.footer-glow { 
+    color: var(--primary); 
+    text-shadow: 0 0 8px var(--primary-glow);
+    animation: pulseGlow 2s infinite ease-in-out;
+}
+
+@keyframes pulseGlow {
+    0%, 100% { text-shadow: 0 0 5px var(--primary-glow); opacity: 0.8; }
+    50% { text-shadow: 0 0 15px var(--primary); opacity: 1; }
+}
 
 @keyframes blink { 50% { opacity: 0; } }
 @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
