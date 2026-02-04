@@ -3,7 +3,7 @@
 Welcome to my personal terminal-themed portfolio. This project serves as a central hub for my security research, development frameworks, and academic journey at **Kolegji AAB**.
 
 ## 🚀 Live Demo
-Check out the live site here: **[INSERT YOUR GITHUB PAGES URL HERE]**
+Check out the live site here: **[https://artazemi.github.io/portfolio/]**
 
 ## 🛠️ Security Stack & Tech
 - **Languages:** Python, Bash, JavaScript, Rust, SQL
@@ -15,6 +15,6 @@ Check out the live site here: **[INSERT YOUR GITHUB PAGES URL HERE]**
 - **Roblox Frameworks**: Secure, high-performance backend logic built with Luau.
 
 ## ✉️ Connect with Me
-- **Discord:** [Your Discord Username]
-- **Email:** [Your Professional Email]
+- **Discord:** [xspy05]
+- **Email:** [artazemi3@gmail.com]
 - **Location:** Kosovo 🇽🇰
