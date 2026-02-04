@@ -35,4 +35,11 @@ function type() {
     setTimeout(type, speed);
 }
 
+function copyDiscord() {
+    const discordTag = "xspy05";
+    navigator.clipboard.writeText(discordTag).then(() => {
+        alert("Discord tag '" + discordTag + "' copied to clipboard!");
+    });
+}
+
 document.addEventListener("DOMContentLoaded", type);
